@@ -26,9 +26,13 @@ section.innerHTML = `<div class="item-resultado">
                     <a href="${dados[1].link}" target="_blank">Mais informações</a>      
             </div>`  */
 
+// criação de uma variavel para pegar todos os dados, inves de acionar todas repetições no innerHTML
+//commit 10
+let resultados = " "
+
 // jeito com repetição  
 for(let dado of dados){
-    section.innerHTML += `     
+    resultados += `     
     <div class="item-resultado">
                     <h2>${dado.titulo}</h2> 
                     <p class="descricao-meta">${dado.descricao}
@@ -36,3 +40,6 @@ for(let dado of dados){
                     <a href="${dado.link}" target="_blank">Mais informações</a>      
             </div>`
 }                    
+
+
+section.innerHTML = resultados
