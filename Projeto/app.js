@@ -4,10 +4,12 @@
 // console.log(dados[0].link); //Uso do ponto( . ) para acessar alguma variavel especifica
 
 let section = document.getElementById("resultados-pesquisa");
-console.log(section);
+//console.log(section);
 //class é mais usado para interagir o html com css
 //id é mais usado para interageir o html com javascript
 
+let campoPesquisa = document.getElementById("campo-pesquisa").value//.value para exibir oque tem dentro
+console.log(campoPesquisa)
 
 
 //jeito manualmente--> 
