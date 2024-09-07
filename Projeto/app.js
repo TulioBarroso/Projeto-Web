@@ -15,10 +15,9 @@ let campoPesquisa = document.getElementById("campo-pesquisa").value//.value para
 if(campoPesquisa == ""){
         section.innerHTML = "<p> Nada foi encontrado error</p>"
         return //return finaliza a função e os codigos abaixo não são executados
-
-
 }
 
+campoPesquisa = campoPesquisa.toLowerCase()//oque escrever vai estar em letra minuscula 
 
 
 //jeito manualmente--> 
@@ -42,12 +41,18 @@ section.innerHTML = `<div class="item-resultado">
 // criação de uma variavel para pegar todos os dados, inves de acionar todas repetições no innerHTML
 //commit 10
 let resultados =" ";
+let titulo = "";
+let descricao = "";
 
 // jeito com repetição  
 for(let dado of dados){
-        //se titulo includes campoPesquisa(oque digitou)
-        if(dado.titulo.includes(campoPesquisa) || dado.descricao.includes(campoPesquisa)){
-                
+        titulo = dado.titulo.toLowerCase()
+       descricao = dado.descricao.toLowerCase()
+
+        //se titulo e descricao includes campoPesquisa(oque digitou)
+        if(titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa)){
+          //acima agora como criei variaveis para o titulo e para a descricao , posso substituir o (dado.titulo) para (titulo.includes).... e descricao.includes....
+
                 resultados += `     
                 <div class="item-resultado">
                                 <h2>${dado.titulo}</h2> 
