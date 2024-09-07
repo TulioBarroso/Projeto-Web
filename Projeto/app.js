@@ -1,4 +1,4 @@
- function pesquisar(){
+function pesquisar(){
      //console.log(dados);   //Quiser acessar um especifico no array: dados[2]
 
 // console.log(dados[0].link); //Uso do ponto( . ) para acessar alguma variavel especifica
@@ -10,9 +10,9 @@ let section = document.getElementById("resultados-pesquisa");
 
 let campoPesquisa = document.getElementById("campo-pesquisa").value//.value para exibir oque tem dentro
 //console.log(campoPesquisa)
-
+let resultados =" ";
 //
-if(campoPesquisa == ""){
+if(campoPesquisa == "" ){
         section.innerHTML = "<p> Nada foi encontrado error</p>"
         return //return finaliza a função e os codigos abaixo não são executados
 }
@@ -40,7 +40,7 @@ section.innerHTML = `<div class="item-resultado">
 
 // criação de uma variavel para pegar todos os dados, inves de acionar todas repetições no innerHTML
 //commit 10
-let resultados =" ";
+
 let titulo = "";
 let descricao = "";
 
@@ -48,6 +48,7 @@ let descricao = "";
 for(let dado of dados){
         titulo = dado.titulo.toLowerCase()
        descricao = dado.descricao.toLowerCase()
+       
 
         //se titulo e descricao includes campoPesquisa(oque digitou)
         if(titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa)){
@@ -58,7 +59,8 @@ for(let dado of dados){
                                 <h2>${dado.titulo}</h2> 
                                 <p class="descricao-meta">${dado.descricao}
                                 </p>
-                                <a href="${dado.link}" target="_blank">Mais informações</a>      
+                                <a href="${dado.link}" target="_blank">Mais informações</a>
+                                <a href="${dado.social}" target="_blank">/ Instagram</a>      
                         </div>`      
 
         }
