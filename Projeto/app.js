@@ -9,7 +9,16 @@ let section = document.getElementById("resultados-pesquisa");
 //id é mais usado para interageir o html com javascript
 
 let campoPesquisa = document.getElementById("campo-pesquisa").value//.value para exibir oque tem dentro
-console.log(campoPesquisa)
+//console.log(campoPesquisa)
+
+//
+if(campoPesquisa == ""){
+        section.innerHTML = "<p> Nada foi encontrado error</p>"
+        return //return finaliza a função e os codigos abaixo não são executados
+
+
+}
+
 
 
 //jeito manualmente--> 
@@ -32,12 +41,12 @@ section.innerHTML = `<div class="item-resultado">
 
 // criação de uma variavel para pegar todos os dados, inves de acionar todas repetições no innerHTML
 //commit 10
-let resultados = " "
+let resultados =" ";
 
 // jeito com repetição  
 for(let dado of dados){
         //se titulo includes campoPesquisa(oque digitou)
-        if(dado.titulo.includes(campoPesquisa)){
+        if(dado.titulo.includes(campoPesquisa) || dado.descricao.includes(campoPesquisa)){
                 
                 resultados += `     
                 <div class="item-resultado">
